@@ -1,0 +1,50 @@
+    {
+        "pokemones":[
+        {
+            "id pokemon": "1", 
+            "Nombre": "Pikachu",
+            "Tipo": "Electrico",
+            "puntos de vida": "322",
+            "puntos de ataque": "230",
+            "puntos de defensa": "123",
+            "Estatura": "0,5 m"
+        },
+        {
+            "id pokemon": "2",
+            "Nombre": "Bulbasaur",
+            "Tipo": "Planta/Veneno",
+            "puntos de vida": "321",
+            "puntos de ataque": "657",
+            "puntos de defensa": "987",
+            "Estatura": "0,7 m"
+        },
+        {
+            "id pokemon": "3",
+            "Nombre": "Rattata",
+            "Tipo": "Normal",
+            "puntos de vida": "543",
+            "puntos de ataque": "889",
+            "puntos de defensa": "2323",
+            "Estatura": "0,3 m"
+        },
+        {
+            "id pokemon": "4",
+            "Nombre": "Squirtle",
+            "Tipo": "Agua",
+            "puntos de vida": "341",
+            "puntos de ataque": "988",
+            "puntos de defensa": "442",
+            "Estatura": "0,5 m"
+        },
+        {
+            "id pokemon": "5",
+            "Nombre": "Charizard",
+            "Tipo": "Fuego/Volador",
+            "puntos de vida": "1002",
+            "puntos de ataque": "2331",
+            "puntos de defensa": "2323",
+            "Estatura": "1,7 m"
+        }
+    
+    ]
+    }
