@@ -1,0 +1,11 @@
+En inglés, los adjetivos suelen ir antes del sustantivo y deben seguir un cierto orden: 
+
+cantidad,
+opinión, 
+tamaño, 
+edad, 
+forma, 
+color, 
+origen,
+material,
+propósito.
