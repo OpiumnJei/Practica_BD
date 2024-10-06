@@ -30,3 +30,4 @@ SELECT * FROM ejemplo_tabla WHERE nombre = 'Jerlinson' AND edad >= 89; -- RETORN
 SELECT * FROM ejemplo_tabla WHERE nombre = 'Jerlinson' AND edad >= 89 AND apellido  = 'Gomez'; -- RETORNA UN REGISTRO QUE CUMPLA CON LAS TRES CONDICIONES
 
 SELECT * FROM ejemplo_tabla WHERE nombre = 'Jerlinson' OR edad = 85; -- RETORNA UN REGISTRO QUE CUMPLA CON ALMENOS UNA DE LAS DOS CONDICIONES
+
