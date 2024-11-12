@@ -104,3 +104,95 @@ UPDATE lenguajes SET lenguaje_id = 7 WHERE lenguaje_id = 2;
 
 DROP TABLE frameworks;
 DROP TABLE lenguajes;
+
+
+/* RESTRICCIONES MULTIPLES
+ * 
+ * Se usan cuando hay mas de dos llaves foraneas en nuestra tabla
+ * */ 
+
+-- tabla para entornos de los diferentes frameworks 
+CREATE TABLE entornos (
+  entorno_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  entorno VARCHAR(30) NOT NULL
+);
+
+-- insercion entornos
+INSERT INTO entornos (entorno) VALUES
+  ("Frontend"),
+  ("Backend");
+ 
+ 
+ CREATE TABLE lenguajes (
+  lenguaje_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  lenguaje VARCHAR(30) NOT NULL DEFAULT 'no lenguaje'
+);
+
+
+-- INSERCION DE DATOS
+INSERT INTO lenguajes (lenguaje) VALUES
+  ("JavaScript"),
+  ("PHP"),
+  ("Python"),
+  ("Ruby"),
+  ("JAVA");
+ 
+ -- INSERCION DE DATOS
+INSERT INTO lenguajes (lenguaje) VALUES
+  ("JavaScript"),
+  ("PHP"),
+  ("Python"),
+  ("Ruby"),
+  ("JAVA");
+ 
+
+ -- tabla frameworks con fk de entorno 
+ CREATE TABLE frameworks (
+  framework_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  framework VARCHAR(30) NOT NULL,
+  lenguaje INT UNSIGNED,
+  entorno INT UNSIGNED,
+  FOREIGN KEY (lenguaje) 
+  	REFERENCES lenguajes(lenguaje_id)
+	  ON DELETE RESTRICT -- eliminacion restringida 
+	  ON UPDATE CASCADE, -- actualizacion en cascada
+  FOREIGN KEY (entorno) 
+  	REFERENCES entornos(entorno_id) -- fk de la tabla entornos 
+	 ON DELETE RESTRICT 
+	 ON UPDATE CASCADE -- se restringe la eliminacion de campos y se actualiza en cascada
+);
+
+-- insercion datos 
+INSERT INTO frameworks (framework, lenguaje, entorno) VALUES
+  ("React", 1, 1),
+  ("Angular", 1, 1),
+  ("Vue", 1, 1),
+  ("Svelte", 1, 1),
+  ("Laravel", 2, 2),
+  ("Symfony", 2, 2),
+  ("Flask", 3, 2),
+  ("Django", 3, 2),
+  ("On Rails", 4, 2);
+ 
+ 
+ SELECT * FROM frameworks;
+ SELECT * FROM entornos;
+ SELECT * FROM lenguajes;
+
+
+SELECT * 
+FROM frameworks f
+ INNER JOIN lenguajes l ON f.lenguaje = l.lenguaje_id
+ INNER JOIN entornos e ON f.entorno = e.entorno_id;
+
+-- PRUEBAS RESTRICCIONES MULTIPLES 
+
+DELETE FROM entornos WHERE entorno_id = 1;
+DELETE FROM lenguajes WHERE lenguaje_id = 5; -- java
+DELETE FROM lenguajes WHERE lenguaje_id = 1; 
+DELETE FROM lenguajes WHERE lenguaje_id = 2; 
+DELETE FROM lenguajes WHERE lenguaje_id = 4; 
+
+UPDATE entornos SET entorno_id = 8 WHERE entorno_id = 1; -- cambiamos el entorno con id = 1 por un id = 8
+UPDATE lenguajes SET lenguaje_id = 5 WHERE lenguaje_id = 3; -- cambiamos el lenguaje  con id = 3 por un id = 5
+UPDATE entornos SET entorno_id = 8 WHERE entorno_id = 1; 
