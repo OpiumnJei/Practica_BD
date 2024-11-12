@@ -70,7 +70,7 @@ INSERT INTO lenguajes (lenguaje) VALUES
   framework VARCHAR(30) NOT NULL,
   lenguaje INT UNSIGNED,
   FOREIGN KEY (lenguaje) REFERENCES lenguajes(lenguaje_id)
- 	ON DELETE RESTRICT NULl ON UPDATE CASCADE -- se restringe la eliminacion de campos y se actualiza en cascada
+ 	ON DELETE RESTRICT ON UPDATE CASCADE -- se restringe la eliminacion de campos y se actualiza en cascada
 );
 
 -- INSERCION
